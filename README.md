@@ -1,6 +1,8 @@
 # React + TypeScript + Vite
 #### bu-hackathon-SmartMed-Mobile
 
+![homepage](https://github.com/Temda/bu-hackathon-SmartMed-Mobile/assets/39237652/fcd4d9b5-9dde-48ac-ad87-8edd92876f44)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
