@@ -14,23 +14,30 @@ function Menu() {
         <div className="fixed inset-x-0 bottom-0 bg-white shadow-md rounded-lg h-20">
             <div className="flex justify-around items-center max-w-md mx-auto py-4">
 
-                <div className="focus:outline-none">
-                    <MdDashboard size={18} color="#9B9B9B" />
-                </div>
-
-                <NavLink type="button" to="/capsule" className="focus:outline-none">
-                    <FaCalendar size={18} color="#9B9B9B" />
+                <NavLink type="button" to="/profile">
+                    <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
+                        <MdDashboard size={18} />
+                    </div>
                 </NavLink>
 
-                <div className="bg-sky-500 rounded-2xl p-4 text-white focus:outline-none">
-                    <GrAdd size={18} color="#fff" />
-                </div>
+                <NavLink type="button" to="/capsule">
+                    <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
+                        <FaCalendar size={18} />
+                    </div>
+                </NavLink>
 
-                <div className="focus:outline-none">
+                <NavLink type="button" to="/personalRecord">
+                    <div className="bg-sky-500 rounded-2xl p-4 text-white focus:outline-none hover:bg-sky-400">
+                        <GrAdd size={18} color="#fff" />
+                    </div>
+                </NavLink>
+
+
+                <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
                     <BsChatRightDotsFill  size={18} color="#9B9B9B"  />
                 </div>
 
-                <div className="focus:outline-none">
+                <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
                     <LiaUserSolid size={18} color="#9B9B9B"  />
                 </div>
 

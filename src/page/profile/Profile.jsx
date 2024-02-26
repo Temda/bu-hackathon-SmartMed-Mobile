@@ -40,7 +40,7 @@ function Profile() {
                                 ))
                             }
                             <NavLink to="/createProfile" className="flex flex-col items-center">
-                                <div className="bg-white shadow-lg rounded-lg p-2 flex items-center justify-center h-32 w-full">
+                                <div className="bg-white rounded-lg p-2 flex items-center justify-center h-32 w-full">
                                     <GrAdd className="w-auto font-bold text-sky-500" size={28} />
                                 </div>
                                 <div className="text-center text-white mt-2">เพิ่ม โปรไฟล์</div>

@@ -4,6 +4,7 @@ import Home from './page/Home';
 import Profile from './page/profile/Profile'
 import CreateProfile from './page/profile/CreateProfile'
 import Capsule from './page/smartcapsule/Capsule'
+import PersonalRecord from './page/record/PersonalRecord'
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,9 @@ const router = createBrowserRouter([
     },
     {
       path: "/capsule", element: <Capsule />
+    },
+    {
+      path: "/personalRecord", element: <PersonalRecord />
     }
 ])
   
