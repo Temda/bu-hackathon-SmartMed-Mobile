@@ -6,19 +6,21 @@ import { GrAdd } from "react-icons/gr";
 import { BsChatRightDotsFill } from "react-icons/bs";
 import { LiaUserSolid } from "react-icons/lia";
 
+import { NavLink } from "react-router-dom";
+
 function Menu() {
     return (
         <>
-        <div className="fixed inset-x-0 bottom-0 bg-white shadow-md rounded-lg">
+        <div className="fixed inset-x-0 bottom-0 bg-white shadow-md rounded-lg h-20">
             <div className="flex justify-around items-center max-w-md mx-auto py-4">
 
                 <div className="focus:outline-none">
                     <MdDashboard size={18} color="#9B9B9B" />
                 </div>
 
-                <div className="focus:outline-none">
+                <NavLink type="button" to="/capsule" className="focus:outline-none">
                     <FaCalendar size={18} color="#9B9B9B" />
-                </div>
+                </NavLink>
 
                 <div className="bg-sky-500 rounded-2xl p-4 text-white focus:outline-none">
                     <GrAdd size={18} color="#fff" />
@@ -27,6 +29,7 @@ function Menu() {
                 <div className="focus:outline-none">
                     <BsChatRightDotsFill  size={18} color="#9B9B9B"  />
                 </div>
+
                 <div className="focus:outline-none">
                     <LiaUserSolid size={18} color="#9B9B9B"  />
                 </div>

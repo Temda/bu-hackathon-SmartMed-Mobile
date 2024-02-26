@@ -2,6 +2,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import Home from './page/Home';
 import Profile from './page/profile/Profile'
+import CreateProfile from './page/profile/CreateProfile'
+import Capsule from './page/smartcapsule/Capsule'
 
 const router = createBrowserRouter([
     {
@@ -9,6 +11,12 @@ const router = createBrowserRouter([
     },
     {
       path: "/profile", element: <Profile />
+    },
+    {
+      path: "/createProfile", element: <CreateProfile />
+    },
+    {
+      path: "/capsule", element: <Capsule />
     }
 ])
   

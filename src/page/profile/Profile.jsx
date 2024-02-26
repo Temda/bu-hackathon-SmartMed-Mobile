@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GrAdd } from "react-icons/gr";
 
 import Menu from '../../component/menu/MenuFooter';
+import { NavLink } from "react-router-dom";
 
 
 function Profile() {
@@ -32,18 +33,18 @@ function Profile() {
                                 profile.map((item, i) => (
                                 <div key={i} className="flex flex-col items-center">
                                     <div className="bg-white rounded-lg p-2 flex items-center justify-center h-32 w-full">
-                                    <img className="h-auto rounded-lg max-w-full" src={item.image} alt={`Profile ${i}`} />
+                                      <img className="h-auto rounded-lg max-w-full" src={item.image} alt={`Profile ${i}`} />
                                     </div>
                                     <div className="text-center text-white mt-2">{item.name} {i}</div>
-                                </div>
+                                </div>  
                                 ))
                             }
-                            <div className="flex flex-col items-center">
+                            <NavLink to="/createProfile" className="flex flex-col items-center">
                                 <div className="bg-white shadow-lg rounded-lg p-2 flex items-center justify-center h-32 w-full">
                                     <GrAdd className="w-auto font-bold text-sky-500" size={28} />
                                 </div>
                                 <div className="text-center text-white mt-2">เพิ่ม โปรไฟล์</div>
-                            </div>
+                            </NavLink>
                         </div>
 
                     </div>
