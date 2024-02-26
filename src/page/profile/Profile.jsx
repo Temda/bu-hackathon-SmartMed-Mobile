@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { GrAdd } from "react-icons/gr";
 
+import Menu from '../../component/menu/MenuFooter';
+
 
 function Profile() {
 
@@ -46,7 +48,7 @@ function Profile() {
 
                     </div>
                 </div>
-                
+                <Menu />
             </div>
         </>
     ) 
