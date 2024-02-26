@@ -1,5 +1,5 @@
 # React + TypeScript + Vite
-#### bu-hackathon-SmartMed-Mobile
+### Bu Hackathon SmartMed Mobile
 
 ![homepage](https://github.com/Temda/bu-hackathon-SmartMed-Mobile/assets/39237652/fcd4d9b5-9dde-48ac-ad87-8edd92876f44)
 
