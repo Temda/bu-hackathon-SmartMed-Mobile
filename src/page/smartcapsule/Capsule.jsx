@@ -38,9 +38,11 @@ const Capsule = () => {
                     <div className="mx-auto p-4">
                         <div className="flex flex-wrap justify-center items-center gap-8">
                             {capsule.map((item, i) => (
+                            <NavLink to="/createCapsule">
                                 <div key={i} className="bg-white rounded-lg flex items-center justify-center h-16 w-28 border-t border-r border-x border-y border-sky-500 hover:bg-sky-600 text-sky-500 hover:text-white">
                                     <p class="font-bold text-4xl">{item.name}</p>
                                 </div>
+                            </NavLink>
                             ))}
                         </div>
                     </div>

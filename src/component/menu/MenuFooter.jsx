@@ -32,10 +32,12 @@ function Menu() {
                     </div>
                 </NavLink>
 
+                <NavLink type="button" to="/summaryReport">
+                    <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
+                        <BsChatRightDotsFill  size={18} color="#9B9B9B"  />
+                    </div>
+                </NavLink>
 
-                <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
-                    <BsChatRightDotsFill  size={18} color="#9B9B9B"  />
-                </div>
 
                 <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
                     <LiaUserSolid size={18} color="#9B9B9B"  />
