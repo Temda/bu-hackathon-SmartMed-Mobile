@@ -3,13 +3,17 @@ import Menu from '../../component/menu/MenuFooter';
 import { HiArrowLeft } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 
-function CreateProfile() {
+import db from '../../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
+
+function CreateProfile() {
+    
     return (
         <>
             <div className="bg-sky-500 flex mx-auto overflow-y-auto h-[800px]">
                 <div className="container max-h-screen mx-auto">
-                    <div class="flex flex-row py-4 p-4">
+                    <div className="flex flex-row py-4 p-4">
                         <div className="w-12 bg-white rounded-xl p-3 flex text-center justify-start items-start">
                             <NavLink to="/Profile">
                                 <HiArrowLeft className="w-auto font-bold text-sky-500" size={18} />
@@ -60,11 +64,11 @@ function CreateProfile() {
                                 <input type="time" className="bg-white border border-white text-black text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 w-full p-3.5" placeholder="" required />
                             </div>
                             <div>
-                                <label for="4" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">เวลาในการทานยาตอนก่อนนอน</label>
+                                <label for="4" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">เวลาในการทานยาตอนก่อนนอน</label>
                                 <input type="time" className="bg-white border border-white text-black text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 w-full p-3.5" placeholder="" required />
                             </div>
                             <div className="py-4">
-                            <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 w-full dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">บันทึก</button>
+                            <button type="button" className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 w-full dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">บันทึก</button>
 
                             </div>
                         </div>

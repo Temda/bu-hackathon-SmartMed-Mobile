@@ -24,7 +24,7 @@ const Capsule = () => {
         <>
             <div className="bg-white">
                 <div className="container min-h-screen">
-                    <div class="flex flex-row py-4 p-4">
+                    <div className="flex flex-row py-4 p-4">
                         <div className="w-12 bg-sky-500 rounded-xl p-3 flex text-center justify-start items-start">
                             <NavLink to="/Profile">
                                 <HiArrowLeft className="w-auto font-bold text-white" size={18} />
@@ -40,7 +40,7 @@ const Capsule = () => {
                             {capsule.map((item, i) => (
                             <NavLink to={`/createCapsule?name=Capsule-${item.name}`}>
                                 <div key={i} className="bg-white rounded-lg flex items-center justify-center h-16 w-28 border-t border-r border-x border-y border-sky-500 hover:bg-sky-600 text-sky-500 hover:text-white">
-                                    <p class="font-bold text-4xl">{item.name}</p>
+                                    <p className="font-bold text-4xl">{item.name}</p>
                                 </div>
                             </NavLink>
                             ))}
