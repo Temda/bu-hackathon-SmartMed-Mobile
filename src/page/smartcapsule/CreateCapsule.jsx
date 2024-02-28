@@ -1,13 +1,25 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { HiArrowLeft } from "react-icons/hi";
 import { FaCamera } from "react-icons/fa";
 
-import { NavLink } from "react-router-dom";
+import { useLocation, useNavigate, NavLink } from 'react-router-dom';
 
 import Menu from '../../component/menu/MenuFooter';
 
 function CreateCapsule() {
+
+    const useQuery = () => {
+        return new URLSearchParams(useLocation().search);
+    }
+    let query = useQuery();
+    let navigate = useNavigate();
+    let name = query.get('name');
+    useEffect(() => {
+        if(!name) {
+            navigate('/capsule');
+        }
+    },[name, navigate])
 
     const [inputFields, setInputFields] = useState([
         { time: '' },
@@ -52,7 +64,12 @@ function CreateCapsule() {
                         <div className="flex mx-auto flex-col">
                             <div className="mt-2">
                                 <label>ชื่อแคปซูล</label>
-                                <input type="text" className="bg-gray-100 border border-white text-black text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" placeholder="ชื่อแคปซูล" />
+                                <input type="text"
+                                    className="bg-gray-100 border border-white text-black text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" 
+                                    placeholder="ชื่อแคปซูล" 
+                                    value={name}
+                                    disabled
+                                />
                             </div>
                             <div className="mt-2">
                                 <label>ชื่อยา</label>
