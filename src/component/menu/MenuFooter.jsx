@@ -26,22 +26,23 @@ function Menu() {
                     </div>
                 </NavLink>
 
-                <NavLink type="button" to="/personalRecord">
+                <NavLink type="button" to="/createProfile">
                     <div className="bg-sky-500 rounded-2xl p-4 text-white focus:outline-none hover:bg-sky-400">
                         <GrAdd size={18} color="#fff" />
                     </div>
                 </NavLink>
 
-                <NavLink type="button" to="/summaryReport">
+                <NavLink type="button" to="/personalRecord">
                     <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
                         <BsChatRightDotsFill  size={18} color="#9B9B9B"  />
                     </div>
                 </NavLink>
 
-
-                <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
-                    <LiaUserSolid size={18} color="#9B9B9B"  />
-                </div>
+                <NavLink type="button" to="/summaryReport">
+                    <div className="focus:outline-none text-gray-500 hover:text-sky-500 hover:bg-sky-500 hover:bg-opacity-25 p-4 rounded-3xl">
+                        <LiaUserSolid size={18} color="#9B9B9B"  />
+                    </div>
+                </NavLink>
 
             </div>
         </div>
