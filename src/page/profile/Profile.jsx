@@ -17,7 +17,7 @@ function Profile() {
         <>
             <div className="bg-sky-500">
                 <div className="container min-h-screen">
-                    <div class="flex flex-row mx-auto text-center justify-end items-end p-9">
+                    <div className="flex flex-row mx-auto text-center justify-end items-end p-9">
                         <div className="w-56">
                             <p className="text-white font-bold text-xl">โปรไฟล์</p>
                         </div>
@@ -35,7 +35,7 @@ function Profile() {
                                     <div className="bg-white rounded-lg p-2 flex items-center justify-center h-32 w-full">
                                       <img className="h-auto rounded-lg max-w-full" src={item.image} alt={`Profile ${i}`} />
                                     </div>
-                                    <div className="text-center text-white mt-2">{item.name} {i}</div>
+                                    <div className="text-center text-white mt-2">{item.name} {i+1}</div>
                                 </div>  
                                 ))
                             }
