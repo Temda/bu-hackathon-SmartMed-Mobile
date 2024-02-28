@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Menu from '../../component/menu/MenuFooter';
+import { FaFilePdf } from "react-icons/fa6";
+
+
 function SummaryReport() {
     const [record, setRecord] = useState([
         {title: "รายงานการทานยา", discription: "คุณย่าสมหญิง| เวลา 10.00 น. (17/10/2566)"},
@@ -30,7 +33,10 @@ function SummaryReport() {
                     <div className="flex flex-col w-full">
                         {record.map((item, i) => (
                             <div key={i} className="bg-white border border-white text-black text-sm rounded-lg mb-2 p-3">
-                                <div className="block font-bold text-blue-900">{item.title}</div>
+                                <div className="flex justify-between items-start">
+                                    <div className="block font-bold text-blue-900">{item.title}</div>
+                                    {/* <FaFilePdf className="h-8 w-auto" color="red" size={18} /> */}
+                                </div>
                                 <div className="block font-normal text-gray-500">{item.discription}</div>
                             </div>
                         ))}
