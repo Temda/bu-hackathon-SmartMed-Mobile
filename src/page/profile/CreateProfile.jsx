@@ -159,7 +159,7 @@ function CreateProfile() {
               <div>
                 <label
                   for="2"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   เวลาในการทานยาตอนกลางวัน
                 </label>
@@ -175,7 +175,7 @@ function CreateProfile() {
               <div>
                 <label
                   for="3"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   เวลาในการทานยาตอนเย็น
                 </label>
