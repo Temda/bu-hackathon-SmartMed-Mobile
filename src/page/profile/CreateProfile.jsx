@@ -56,7 +56,7 @@ function CreateProfile() {
     <>
     <form onSubmit={handleSubmit}>
       <div className="bg-sky-500 flex mx-auto overflow-y-auto h-[800px]">
-        <div className="container max-h-screen mx-auto">
+        <div className="max-h-screen mx-auto">
           <div className="flex flex-row py-4 p-4">
             <div className="w-12 bg-white rounded-xl p-3 flex text-center justify-start items-start">
               <NavLink to="/Profile">

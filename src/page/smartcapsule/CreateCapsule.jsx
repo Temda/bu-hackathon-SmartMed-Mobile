@@ -44,7 +44,7 @@ function CreateCapsule() {
     return (
         <>
         <div className="bg-white overflow-y-auto h-[970px]">
-                <div className="container min-h-screen">
+                <div className="min-h-screen">
                     <div class="flex text-center justify-between items-center py-4 p-4 gap-2">
                         <div className="bg-sky-500 rounded-xl p-3">
                             <NavLink to="/capsule">

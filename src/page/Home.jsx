@@ -5,7 +5,7 @@ function Home() {
 
   return (
     <>
-        <div className="container mx-auto flex justify-center items-center min-h-screen">
+        <div className="mx-auto flex justify-center items-center min-h-screen">
             <div className="flex-initial">
                 <div className="p-4 text-center"> 
                     <img src="./homepage.png" alt="homepage" />

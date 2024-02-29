@@ -16,7 +16,7 @@ function Profile() {
     return(
         <>
             <div className="bg-sky-500">
-                <div className="container min-h-screen">
+                <div className="min-h-screen">
                     <div className="flex flex-row mx-auto text-center justify-end items-end p-9">
                         <div className="w-56">
                             <p className="text-white font-bold text-xl">โปรไฟล์</p>

@@ -23,7 +23,7 @@ const Capsule = () => {
     return (
         <>
             <div className="bg-white">
-                <div className="container min-h-screen">
+                <div className="min-h-screen">
                     <div className="flex flex-row py-4 p-4">
                         <div className="w-12 bg-sky-500 rounded-xl p-3 flex text-center justify-start items-start">
                             <NavLink to="/Profile">
