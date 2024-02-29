@@ -2,10 +2,13 @@ import React, { useState, useRef } from "react";
 import Menu from "../../component/menu/MenuFooter";
 import { HiArrowLeft } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
+import { TiDelete } from "react-icons/ti";
 
 import { db, storage } from "../../firebase";
 import { collection, addDoc } from 'firebase/firestore';
-import { ref as storageRef, uploadBytes } from 'firebase/storage';
+
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+
 
 function CreateProfile() {
 
@@ -18,38 +21,80 @@ function CreateProfile() {
   const [noonTime, setNoonTime] = useState("");
   const [eveningTime, setEveningTime] = useState("");
   const [beforeBedTime, setBeforeBedTime] = useState("");
-
+  const [imagePreviewUrl, setImagePreviewUrl] = useState("");
+  
+ 
   const fileInputRef = useRef(null);
 
-  const handleFileInputClick = () => {
-    fileInputRef.current.click();
+  const [file, setFile] = useState(null);
+
+  const handleFileInputClick = () => fileInputRef.current.click();
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file && file.type.match('image.*')) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setImagePreviewUrl(reader.result);
+      };
+
+      reader.readAsDataURL(file);
+      setFile(file);
+    } else {
+      setImagePreviewUrl("");
+      setFile(null); 
+      if (fileInputRef.current) {
+        fileInputRef.current.value = null;
+      }
+    }
   };
 
   const insertUserData = async (userData) => {
     try {
       const docRef = await addDoc(collection(db, "users"), userData);
       console.log("Document written with ID: ", docRef.id);
-      alert('บันทึกเรียบร้อย')
+      alert('บันทึกเรียบร้อย');
     } catch (e) {
       console.error("Error adding document: ", e);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!file) {
+      console.error("No file selected.");
+      return;
+    }
+
+    const storageRef = ref(storage, `profile/${file.name}`);
+    const snapshot = await uploadBytes(storageRef, file);
+    const photoURL = await getDownloadURL(snapshot.ref);
+
     const userData = {
-        fullName,
-        age: Number(age),
-        sex,
-        profileName,
-        chronicDiseases,
-        morning: morningTime,
-        noon: noonTime,
-        evening: eveningTime,
-        beforeBed: beforeBedTime
+      fullName,
+      age: Number(age),
+      sex,
+      profileName,
+      chronicDiseases,
+      morning: morningTime,
+      noon: noonTime,
+      evening: eveningTime,
+      beforeBed: beforeBedTime,
+      profile: photoURL
     };
 
     insertUserData(userData);
+  };
+
+  const handleRemoveImageProfile = () => {
+    setImagePreviewUrl("");
+    setFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
   return (
@@ -73,16 +118,25 @@ function CreateProfile() {
 
           <div className="flex mx-auto justify-start items-start gap-3 p-4">
           <div className="flex flex-row">
-                <div className="rounded-lg flex items-center justify-center h-28 w-44 bg-gray-500 cursor-pointer" onClick={handleFileInputClick}>
+                {imagePreviewUrl ? (
+                  <div className="rounded-lg flex items-center justify-center h-28 w-44 bg-gray-500 cursor-pointer relative">
+                  <div className="absolute -top-6 -right-2 bg-red-500 text-white cursor-pointer p-1 rounded-full" onClick={handleRemoveImageProfile}>
+                    <TiDelete />
+                  </div>
+                  <img src={imagePreviewUrl} alt="Image preview" className="rounded-lg" />
+                </div>
+                ) : (
+                  <div className="rounded-lg flex items-center justify-center h-28 w-44 bg-gray-500 cursor-pointer" onClick={handleFileInputClick}>
                     <input
-                        type="file"
-                        ref={fileInputRef}
-                        className="hidden"
-                        accept="image/png, image/jpeg"
-                        onChange={(event) => console.log(event.target.files)}
+                      type="file"
+                      ref={fileInputRef}
+                      className="hidden"
+                      accept="image/png, image/jpeg"
+                      onChange={handleFileChange}
                     />
                     <span className="text-white font-semibold">Upload Profile</span>
                 </div>
+                )}
             </div> 
             <div className="flex mx-auto flex-col">
               <input
