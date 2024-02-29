@@ -5,9 +5,10 @@ import { NavLink } from "react-router-dom";
 
 import { db, storage } from "../../firebase";
 import { collection, addDoc } from 'firebase/firestore';
+import { ref as storageRef, uploadBytes } from 'firebase/storage';
 
 function CreateProfile() {
-    
+
   const [fullName, setFullName] = useState("");
   const [age, setAge] = useState("");
   const [sex, setSex] = useState("");
