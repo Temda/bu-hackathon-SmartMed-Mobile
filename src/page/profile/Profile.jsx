@@ -4,7 +4,7 @@ import { GrAdd } from "react-icons/gr";
 import Menu from '../../component/menu/MenuFooter';
 import { NavLink } from "react-router-dom";
 
-import { db, storage } from "../../firebase";
+import { db } from "../../firebase";
 import { collection, getDocs } from 'firebase/firestore';
 
 
